@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SalonApi.Models;
+using System.Collections.Generic;
 
 namespace SalonApi.Controllers
 {
@@ -28,10 +29,10 @@ namespace SalonApi.Controllers
         }
 
         // GET: api/Services/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Services>> GetServices(int id)
+        [HttpGet("{categoryId}")]
+        public async Task<ActionResult<List<Services>>> GetServices(int categoryId)
         {
-            var services = await _context.Services.FindAsync(id);
+            var services = await _context.Services.Where(x => x.CategoryId== categoryId).ToListAsync();
 
             if (services == null)
             {
