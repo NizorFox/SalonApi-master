@@ -9,14 +9,7 @@ namespace SalonApi.Models
 {
     public partial class Product
     {
-        public Product()
-        {
-            AttachedProductAttachedProductNavigation = new HashSet<AttachedProduct>();
-            AttachedProductMainProduct = new HashSet<AttachedProduct>();
-            ProductPhoto = new HashSet<ProductPhoto>();
-            ProductSale = new HashSet<ProductSale>();
-        }
-
+      
         public int Id { get; set; }
         public string Title { get; set; }
         public decimal Cost { get; set; }

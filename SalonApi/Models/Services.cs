@@ -9,12 +9,7 @@ namespace SalonApi.Models
 {
     public partial class Services
     {
-        public Services()
-        {
-            ClientServices = new HashSet<ClientServices>();
-            ServicePhotos = new HashSet<ServicePhotos>();
-        }
-
+       
         public int Id { get; set; }
         public string Title { get; set; }
         public decimal Cost { get; set; }
